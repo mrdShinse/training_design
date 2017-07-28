@@ -41,7 +41,8 @@ module.exports = {
     new ManifestPlugin({
       publicPath: output.publicPath,
       writeToFileEmit: true
-    })
+    }),
+    new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.js' })
   ],
 
   resolve: {
